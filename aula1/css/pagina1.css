@@ -1,0 +1,31 @@
+/*  * - seletor universal, aplica as regras a todo documento  */
+*{
+    background-color: aqua;
+}
+/* tag - seletor de tags, aplica as regras a tag*/
+body{
+    min-height: 800px;
+}
+span, a{
+    background-color: blueviolet;
+}
+/* . - seletor de classes, aplica a todas as tags que contenham aquela classe*/
+.classeDiv1{
+    background-color: red;
+}
+.classeDiv2{
+    background-color: blue;
+    padding: 15px; /* dentro da tag*/
+    
+}
+.classeDiv3{
+    background-color: brown;
+    /* margin: 15px; fora da tag  as 4 dimensoes*/
+    /* margin: 15px 50px; 1 numero top e bottom 2 numero right e left */
+    margin: 10px 5px 6px 15px ; /*aplicacao dos numeros sentido horário*/
+}
+/*# - seletor por ID*/
+#paragrafo{
+    background-color: blueviolet;
+}
+

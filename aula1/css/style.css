@@ -1,0 +1,27 @@
+a{
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+}
+button{
+    border: none;
+    border-radius:20px  10px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px 20px;
+}
+a:hover{
+    color: black;
+}
+button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px 20px;
+}
+div{
+    margin-bottom: 15px;
+    border-bottom: 2px solid black;
+}
