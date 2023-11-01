@@ -13,6 +13,12 @@
         body{
             min-height: 1500px;
         }
+        .bordaVermelha{
+            border: 1px solid red;
+            background-color: rgb(216, 90, 90);
+            color: white;
+            font-weight: 600;
+        }
     </style>
     <nav>
         <a href="/index.html">Home</a>
@@ -39,30 +45,25 @@
             </div>
             <div>
                 <label for="genero">Gênero:</label>
-                <input type="radio" name="genero" id="" value="M"> Masculino
-                <input type="radio" name="genero" id="" value="F"> Feminino
-                <input type="radio" name="genero" id="" value="O"> Outros
-                <input type="text" name="genero" id="" disabled>
+                <input type="radio" name="genero" id="" value="M" onclick="verOutros()"> Masculino
+                <input type="radio" name="genero" id="" value="F" onclick="verOutros()"> Feminino
+                <input type="radio" name="genero" id="" value="O" onclick="verOutros()"> Outros
+                <input type="text" name="genero" id="outros" disabled>
             </div>
             <div>
                 <label for="nacionalidade">Nacionalidade:</label>
-                <select name="nacionalidade" id="">
+                <select name="nacionalidade" id="nacionalidade" onclick="verEstados()">
                     <option value="" selected></option>
-                    <option value="">Brasil</option>
+                    <option value="BR">Brasil</option>
                     <option value="">Venezuela</option>
                     <option value="">Iraque</option>
                     <option value="">Coreia do Norte</option>
                     <option value="">Cuba</option>
                     <option value="">Afeganistão</option>
                 </select>
-                <label for="naturalidade" hidden>Naturalidade:</label>
-                <select name="" id="" hidden>
-                    <option value=""></option>
-                    <option value="">Amazonas</option>
-                    <option value="">Pará</option>
-                    <option value="">Amapá</option>
-                    <option value="">Acre</option>
-                    <option value="">Tocantins</option>
+                <label for="naturalidade"  id="naturalidadeLabel" hidden>Naturalidade:</label>
+                <select name="" id="naturalidade" hidden>
+                    <option value="" selected></option>
                 </select>
             </div>
             <div>
@@ -78,10 +79,11 @@
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="" required>
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="">
+                <input type="password" name="senha" id="senha1" onchange="confirmarSenha()">
                 <label for="senha">Confirme:</label>
-                <input type="password" name="senha" id="">
-                <button type="button">Ver</button>
+                <input type="password" name="senha" id="senha2" onchange="confirmarSenha()">
+                <input value="Ver" id="btnSenha" type="button" onclick="verSenha()">
+                <span id="senhaIncorreta"></span>
             </div>
             <div>
                 <button type="submit">Salvar</button>
@@ -89,16 +91,33 @@
                 <button type="reset">Limpar</button>
             </div>
         </form>
-        <form action="">
+        <div>
             <h2>Endereço</h2>
             <div>
-                <label for="cep">CEP:</label> <input type="number" name="cep">
-                <button type="button"><img height="12px" src="/images/lupa-arredondada.png" alt="lupa-pesquisar"> Pesquisar</button>
+                <label for="cep" >CEP:</label> <input id="cep" type="number" name="cep">
+                <button onclick="confirmarCep()" type="button"><img height="12px" src="/images/lupa-arredondada.png" alt="lupa-pesquisar"> Pesquisar</button>
                 <button type="button">Digitar</button>
             </div>
-        </form>
+            <div>
+                <label for="logradouro" >Logradouro: </label>
+                <input type="text" name="logradouro" id="logradouro" disabled>
+                <label for="numero">Numero: </label>
+                <input type="text" name="numero" id="" >
+                <label for="complemento">Complemento: </label>
+                <input type="text" name="complemento" id="complemento"disabled>
+            </div>
+            <div>
+                <label for="bairro">Bairro: </label>
+                <input type="text" name="bairro" id="bairro" disabled>
+                <label for="cidade">Cidade: </label>
+                <input type="text" name="cidade" id="cidade" disabled>
+                <label for="estado">Estado: </label>
+                <input type="text" name="estado" id="uf" disabled>
+            </div>
+            <div>
+            </div>
     </main>
 
-    
+    <script src="/scripts/faleConosco.js"></script>
 </body>
 </html>
